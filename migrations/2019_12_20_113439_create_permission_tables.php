@@ -38,6 +38,7 @@ class CreatePermissionTables extends Migration
             $table->string('name');
             $table->string('description', 200)->default('');
             $table->string('guard_name');
+			$table->timestamps();
             $table->engine = 'InnoDB';
             $table->charset = 'utf8';
             $table->collation = 'utf8_unicode_ci';
