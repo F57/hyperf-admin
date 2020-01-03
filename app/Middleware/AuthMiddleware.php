@@ -64,7 +64,9 @@ class AuthMiddleware implements MiddlewareInterface
     {
 
 		$url = $request->getServerParams()['path_info'];
-		$purl = ltrim($url,"/");
+
+		$purl = strtolower(ltrim($url,"/"));
+
         $loginArr=array(
 			'system/login',
 			'system/captchas',
@@ -75,21 +77,22 @@ class AuthMiddleware implements MiddlewareInterface
 		}
 
 		$id = $this->session->get('id');
-		if($id){
 
-		}
         $uinfo = $this->redis->hGetAll('admin:user:id:'.$id);
         if(empty($uinfo)){
             $where[]=['id','=',$id];
             $uinfo =$this->admin->oneInfo($where);
             if($uinfo){
-            	$uinfo = $uinfo->toArray();
-			}else{
-            	$uinfo=array();
-			}
+                $uinfo = $uinfo->toArray();
+            }else{
+                $uinfo=array();
+            }
             $this->redis->hMSet('admin:user:id:'.$id,$uinfo);
         }
         Context::set('uinfo', $uinfo);
+        if(!$id){
+            return $this->HttpResponseInterface->redirect('/408');
+        }
         if($id !=1)
         {
             //菜单以及权限
@@ -100,9 +103,10 @@ class AuthMiddleware implements MiddlewareInterface
                 'system/',
                 'system/index',
             );
-            if(!in_array($purl,$whiteBlock)){
 
-                $result = $user->can($purl);
+            if(!in_array($purl,$whiteBlock)){
+                $permission = Permission::getPermissions(['name' => $purl])->first();
+                $result = $user->checkPermissionTo($permission);
                 $method = $request->getMethod();
                 if(!$result && $method=='GET'){
                     return $this->HttpResponseInterface->redirect('/408');
@@ -112,6 +116,7 @@ class AuthMiddleware implements MiddlewareInterface
                 }
             }
             $menu = $user->getMenu();
+
         }else{
 
             $menu = $this->permission::getMenuList();
