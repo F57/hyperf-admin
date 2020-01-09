@@ -12,14 +12,11 @@ declare(strict_types=1);
 use App\Middleware\HeaderMiddleware;
 use Hyperf\Validation\Middleware\ValidationMiddleware;
 use Hyperf\Session\Middleware\SessionMiddleware;
-use App\Middleware\CsrfMiddleware;
-
 
 return [
     'http' => [
         HeaderMiddleware::class,
         ValidationMiddleware::class,
         SessionMiddleware::class,
-        CsrfMiddleware::class,
     ],
 ];
