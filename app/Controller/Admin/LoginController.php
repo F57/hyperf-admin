@@ -103,13 +103,13 @@ class LoginController extends BaseController
 
         $where[]=['email','=',$email];
 
-        $user = $admin->oneInfo($where)->toArray();
+        $user = $admin->oneInfo($where);
 
 
         if (!$user) {
             throw new AppNotFoundException("用户不存在");
         }
-
+	$user = $user->toArray();
         if(!password_verify($passwd, $user['passwd'])){
             throw new AppBadRequestException("用户名或者密码错误");
         }
