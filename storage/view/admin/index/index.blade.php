@@ -1,6 +1,5 @@
-@extends('admin.layout.index')
+@extends('admin.layout.base')
 @section('contents')
-
     <div class="container-fluid">
 
         <div class="row">
@@ -206,5 +205,4 @@
         </div>
 
     </div>
-
 @endsection

@@ -1,4 +1,4 @@
-@extends('admin.layout.index')
+@extends('admin.layout.base')
 @section('contents')
 
     <div class="container-fluid">
@@ -31,7 +31,7 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($list as $v)
+                                @foreach($info as $v)
                                     <tr>
                                         <td>
                                             <label class="lyear-checkbox checkbox-primary">
@@ -44,8 +44,8 @@
                                         <td guard_name="{{ $v->guard_name }}">{{ $v->guard_name }}</td>
                                         <td>
                                             <div class="btn-group">
-                                                <button class="btn-xs btn btn-info up">编辑</button>
-                                                <a class="btn-xs btn btn-primary" href="/system/role/authorize?id={{ $v['id'] }}" title="授权" data-toggle="tooltip">授权</a>
+                                                <button class="btn-xs btn btn-info up-btn">编辑</button>
+                                                <a class="btn-xs btn btn-primary" href="/v1/role/authorize/{{ $v['id'] }}" title="授权" data-toggle="tooltip">授权</a>
 
                                                 <button class="btn-xs btn btn-danger" onclick="del({{ $v->id }})">删除</button>
                                             </div>
@@ -145,11 +145,11 @@
                 return false;
             }
 
-            postData('/system/role/store',obj);
+            postData('/v1/role/store',obj);
         }
 
 
-        $('.up').click(function(){
+        $('.up-btn').click(function(){
             var td = $(this).parent().parent().siblings();
 
             var id = $(td[1]).attr('did');
@@ -171,7 +171,7 @@
             upobj.name= $("#name").val();
             upobj.description=$("#description").val();
             upobj.guard_name=$("#guard_name").val();
-            postData('/system/role/update',upobj);
+            postData('/v1/role/update',upobj);
         }
 
         function del(id) {
@@ -187,7 +187,7 @@
                         text: '确定',
                         btnClass: 'btn-orange',
                         action:function () {
-                            postData('/system/role/del',obj);
+                            postData('/v1/role/del',obj);
                         }
                     },
                     close: {

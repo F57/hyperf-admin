@@ -43,17 +43,18 @@ trait ModelTrait
 		return  $this->oneInfo($where)->delete();
 	}
 
-    public function getListByPage($where=[],$num=10,$orderby=array('id','desc'))
+    public function getListByPage($where=[],$orderby=array('id','desc'),$num=10)
     {
 
        $list = $this->where($where)
             ->orderBy($orderby['0'], $orderby['1'])
             ->paginate($num)
             ->toArray();
+
         $count = $this->where($where)->count();
         $result = $this->paginatorService->getPaginator(array('list'=>$list,'count'=>$count,'num'=>$num));
-        $data['p']=$result;
-        $data['d']=$list['data'];
+        $data['page']=$result;
+        $data['data']=$list['data'];
         return $data;
     }
 }

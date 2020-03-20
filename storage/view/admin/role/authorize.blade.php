@@ -1,11 +1,10 @@
-@extends('admin.layout.index')
+@extends('admin.layout.base')
 @section('css')
     <link href="/css/materialdesignicons.min.css" rel="stylesheet">
 @endsection
 @section('contents')
 
     <div class="container-fluid">
-
         <div class="row">
             <div class="col-lg-12">
                 <div class="card">
@@ -15,7 +14,7 @@
                         <form action="#!" method="post">
                             <div class="form-group">
                                 <label for="example-text-input">角色名称</label>
-                                <input class="form-control" value="{{ $roleInfo['name'] }}" type="text" name="role-input" placeholder="角色名称" disabled="disabled">
+                                <input class="form-control" value="{{ $info['roleInfo']['name'] }}" type="text" name="role-input" placeholder="角色名称" disabled="disabled">
                             </div>
                             <div class="table-responsive">
                                 <table class="table table-striped">
@@ -30,11 +29,11 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($menuList as $v)
+                                    @foreach($info['menuList'] as $v)
                                         <tr>
                                             <td>
                                                 <label class="lyear-checkbox checkbox-primary">
-                                                    <input name="rules[]" type="checkbox" class="checkbox-parent" dataid="id-{{ $v['id'] }}" value="{{ $v['id'] }}" @if(in_array($v['id'],$permissions)) checked="checked"@endif>
+                                                    <input name="rules[]" type="checkbox" class="checkbox-parent" dataid="id-{{ $v['id'] }}" value="{{ $v['id'] }}" @if(in_array($v['id'],$info['permissions'])) checked="checked"@endif>
                                                     <span> {{ $v['display_name'] }}</span>
                                                 </label>
                                             </td>
@@ -44,7 +43,7 @@
                                                 <tr>
                                                     <td class="p-l-20">
                                                         <label class="lyear-checkbox checkbox-primary">
-                                                            <input name="rules[]" type="checkbox" class="checkbox-parent checkbox-child" dataid="id-{{ $v['id'] }}-{{ $vv['id'] }}" value="{{ $vv['id'] }}" @if(in_array($vv['id'],$permissions)) checked="checked"@endif>
+                                                            <input name="rules[]" type="checkbox" class="checkbox-parent checkbox-child" dataid="id-{{ $v['id'] }}-{{ $vv['id'] }}" value="{{ $vv['id'] }}" @if(in_array($vv['id'],$info['permissions'])) checked="checked"@endif>
                                                             <span> {{ $vv['display_name'] }}</span>
                                                         </label>
                                                     </td>
@@ -54,7 +53,7 @@
                                                         <td class="p-l-40">
                                                             @foreach($vv['child'] as $vvv)
                                                                 <label class="lyear-checkbox checkbox-primary checkbox-inline">
-                                                                    <input name="rules[]" type="checkbox" class="checkbox-child" dataid="id-{{ $v['id'] }}-{{ $vv['id'] }}-{{ $vvv['id'] }}" value="{{ $vvv['id'] }}" @if(in_array($vvv['id'],$permissions)) checked="checked"@endif>
+                                                                    <input name="rules[]" type="checkbox" class="checkbox-child" dataid="id-{{ $v['id'] }}-{{ $vv['id'] }}-{{ $vvv['id'] }}" value="{{ $vvv['id'] }}" @if(in_array($vvv['id'],$info['permissions'])) checked="checked"@endif>
                                                                     <span> {{ $vvv['display_name'] }}</span>
                                                                 </label>
                                                             @endforeach
@@ -130,7 +129,7 @@
             }
             lightyear.loading('show');
             $.ajax({
-                url : "/system/role/auth?id={{ $id }}",
+                url : "/v1/role/auth/{{ $info['id'] }}",
                 type : "POST",
                 data : {'ids':check_arr},
                 dataType : "json",

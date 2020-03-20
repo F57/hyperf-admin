@@ -12,10 +12,15 @@ class PaginatorService
     public function getPaginator($list)
     {
         $perPage = 2;
+
         $paginator = new Paginator($list['list'],$perPage);
+
         $total = ceil($list['count']/$list['num']);
+
         $url = array();
+
         $currentPage = $paginator->currentPage();
+
         if($currentPage>$total){
             return '';
         }

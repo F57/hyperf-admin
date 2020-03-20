@@ -1,8 +1,7 @@
-@extends('admin.layout.index')
+@extends('admin.layout.base')
 @section('contents')
 
     <div class="container-fluid">
-
         <div class="row">
             <div class="col-lg-12">
                 <div class="card">
@@ -11,7 +10,6 @@
                             <a class="btn btn-primary m-r-5" href="#" data-toggle="modal" data-target="#create"><i class="mdi mdi-plus"></i> 新增</a>
                         </div>
                     </div>
-
                     <div class="card-body">
 
                         <div class="table-responsive">
@@ -35,7 +33,7 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($list as $v)
+                                @foreach($info as $v)
                                     <tr>
                                         <td pid="{{ $v->parent_id }}">
                                             <label class="lyear-checkbox checkbox-primary">
@@ -58,7 +56,7 @@
                                         </td>
                                         <td>
                                             <div class="btn-group">
-                                                <button class="btn-xs btn btn-info up">编辑</button>
+                                                <button class="btn-xs btn btn-info up-btn">编辑</button>
                                                 <button class="btn-xs btn btn-danger" onclick="del({{ $v->id }})">删除</button>
                                             </div>
                                         </td>
@@ -72,7 +70,7 @@
                                                     </label>
                                                 </td>
                                                 <td lid="{{ $vv->id }}">{{ $vv->id }}</td>
-                                                <td name="{{ $vv->name }}">--{{ $vv->name }}</td>
+                                                <td name="{{ $vv->name }}">--&nbsp;{{ $vv->name }}</td>
                                                 <td display_name="{{ $vv->display_name }}">{{ $vv->display_name }}</td>
                                                 <td url="{{ $vv->url }}">{{ $vv->url }}</td>
                                                 <td icon="{{ $vv->icon }}">{{ $vv->icon }}</td>
@@ -87,7 +85,7 @@
                                                 </td>
                                                 <td>
                                                     <div class="btn-group">
-                                                        <button class="btn-xs btn btn-info up">编辑</button>
+                                                        <button class="btn-xs btn btn-info up-btn">编辑</button>
                                                         <button class="btn-xs btn btn-danger" onclick="del({{ $vv->id }})">删除</button>
                                                     </div>
                                                 </td>
@@ -102,7 +100,7 @@
                                                             </label>
                                                         </td>
                                                         <td lid="{{ $vvv->id }}">{{ $vvv->id }}</td>
-                                                        <td name="{{ $vvv->name }}">----{{ $vvv->name }}</td>
+                                                        <td name="{{ $vvv->name }}">-----&nbsp;{{ $vvv->name }}</td>
                                                         <td display_name="{{ $vvv->display_name }}">{{ $vvv->display_name }}</td>
                                                         <td url="{{ $vvv->url }}">{{ $vvv->url }}</td>
                                                         <td icon="{{ $vvv->icon }}">{{ $vvv->icon }}</td>
@@ -110,14 +108,14 @@
                                                         <td guard_name="{{ $vvv->guard_name }}">{{ $vvv->guard_name }}</td>
                                                         <td status="{{ $vvv->status }}">
                                                             @if($vvv->status==0)
-                                                                <span class="text-success">启用</span>
+                                                                <span class="text-success">显示</span>
                                                             @else
                                                                 <span class="text-danger">禁用</span>
                                                             @endif
                                                         </td>
                                                         <td>
                                                             <div class="btn-group">
-                                                                <button class="btn-xs btn btn-info up">编辑</button>
+                                                                <button class="btn-xs btn btn-info up-btn">编辑</button>
                                                                 <button class="btn-xs btn btn-danger" onclick="del({{ $vvv->id }})">删除</button>
                                                             </div>
                                                         </td>
@@ -150,7 +148,7 @@
                             <label for="recipient-name" class="control-label">父级菜单</label>
                             <select class="form-control parent_id" size="1">
                                 <option value="0">无</option>
-                                @foreach($list as $v)
+                                @foreach($info as $v)
                                     <option value="{{ $v->id }}">{{ $v->display_name }}</option>
                                     @if(count($v->child) !=0)
                                         @foreach($v->child as $kk=>$vv)
@@ -214,7 +212,7 @@
                             <label for="recipient-name" class="control-label">父级菜单</label>
                             <select class="form-control parent_id" size="1" id="parent_id">
                                 <option value="0">无</option>
-                                @foreach($list as $v)
+                                @foreach($info as $v)
                                     <option value="{{ $v->id }}">{{ $v->display_name }}</option>
                                     @if(count($v->child) !=0)
                                         @foreach($v->child as $kk=>$vv)
@@ -298,11 +296,10 @@
                 lightyear.notify('排序不能为空', 'danger', 100);
                 return false;
             }
-            postData('/system/menu/store',obj);
+            postData('/v1/menu/store',obj);
         }
 
-
-        $('.up').click(function(){
+        $('.up-btn').click(function(){
             var td = $(this).parent().parent().siblings();
             var parent_id = $(td[0]).attr('pid');
             var id = $(td[1]).attr('lid');
@@ -348,7 +345,7 @@
             upobj.guard_name=$("#guard_name").val();
             upobj.status=$("#status option:selected").val();;
             upobj.sort=$("#sort").val();
-            postData('/system/menu/update',upobj);
+            postData('/v1/menu/update',upobj);
         }
 
         function del(id) {
@@ -364,7 +361,7 @@
                         text: '确定',
                         btnClass: 'btn-orange',
                         action:function () {
-                            postData('/system/menu/del',obj);
+                            postData('/v1/menu/del',obj);
                         }
                     },
                     close: {
@@ -376,6 +373,3 @@
 
     </script>
 @endsection
-
-
-

@@ -2,6 +2,8 @@
 
 [spatie/laravel-permission](https://github.com/spatie/laravel-permission) 的Hyperf版
 
+使用示例代码：<https://github.com/donjan-deng/la-user-center>
+
 ## 与spatie/laravel-permission的区别
 
  - 无中间件,Hyperf目前还没有Auth组件，请自行创建中间件
@@ -11,8 +13,15 @@
    ```
 - permissions 增加 parent_id,display_name,url,sort字段，用于生成树形菜单，但不是必填。
    ```
-   $user->getMenu(); // 获取当前登录用户的菜单
-   Permission::getMenuList();//获取所有的permission，以树形展示
+   $user->getMenu(); // 获取当前登录用户的菜单,即url有值。
+    /**
+     * 获取树形的permission列表.
+     * @param int||string $parentId 父级ID
+     * @param bool $isUrl 是否是一个URL
+     * @param Collection $permission 传入permission集合，如果不传将从所有的permission生成
+     * @return Collection
+     */
+   Permission::getMenuList($parentId = 0, $isUrl = false, Collection $permission = null);
    ```
 - roles增加description字段,非必填
 
@@ -58,11 +67,11 @@ $permission = Permission::create(['name' => 'user-center/user/post','display_nam
 //为角色分配一个权限
 $role->givePermissionTo($permission);
 $role->syncPermissions($permissions);//多个
-$role->permissions()->sync([1,2,3]);
+$role->syncPermissions([1,2,3]);
 //权限添加到一个角色
 $permission->assignRole($role);
 $permission->syncRoles($roles);//多个
-$permission->roles()->sync([1,2,3]);
+$permission->syncRoles([1,2,3]);
 //删除权限
 $role->revokePermissionTo($permission);
 $permission->removeRole($role);
@@ -73,7 +82,7 @@ $user->assignRole('管理员');
 $user->assignRole($role->id);
 $user->assignRole($role);
 $user->assignRole(['管理员', '普通用户']);
-$user->roles()->sync([1,2,3]);
+$user->assignRole([1,2,3]);
 //删除角色
 $user->removeRole('管理员');
 //获取角色集合
@@ -96,6 +105,10 @@ $user->hasRole([$role1,$role2]);
 ```
 
 ## CHANGELOG
+
+### 1.0.2 - 2020-01-19
+
+- [#4](https://github.com/donjan-deng/hyperf-permission/pull/4)兼容未启用innodb_large_prefix的老版本mysql
 
 ### 1.0.1 - 2019-12-17
 

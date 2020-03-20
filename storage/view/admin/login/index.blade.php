@@ -72,7 +72,7 @@
                         <span class="mdi mdi-check-all form-control-feedback" aria-hidden="true"></span>
                     </div>
                     <div class="col-xs-5">
-                        <img src="/system/captchas?t=111" class="pull-right" id="captcha" style="cursor: pointer;" onclick="this.src='/system/captchas?t'+'='+Math.random();" title="点击刷新" alt="captcha">
+                        <img src="/v1/login/captchas?t=111" class="pull-right" id="captcha" style="cursor: pointer;" onclick="this.src='/v1/login/captchas?t'+'='+Math.random();" title="点击刷新" alt="captcha">
                     </div>
                 </div>
                 <div class="form-group">
@@ -136,7 +136,7 @@
         var email = $("input[name='email']").val();
         var captcha = $("input[name='captcha']").val();
         $.ajax({
-            url: '/system/login',
+            url: '/v1/login',
             type: 'POST',
             dataType:"json",
             async:true,
@@ -151,7 +151,7 @@
             success: function (info) {
                 if(info['code']==200){
                     lightyear.notify('修改成功，页面即将自动跳转~', 'success', 3000);
-                    window.location.href='/system/index';
+                    window.location.href='/v1/index/index';
                 }else{
                     lightyear.notify(info['message']+'~', 'danger', 100);
                     $('form').bootstrapValidator('disableSubmitButtons', false);

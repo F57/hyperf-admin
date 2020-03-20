@@ -10,15 +10,17 @@ declare(strict_types=1);
  * @license  https://github.com/hyperf-cloud/hyperf/blob/master/LICENSE
  */
 
+use App\Exception\Handler\AppExceptionHandler;
+use Hyperf\Validation\ValidationExceptionHandler;
+use App\Exception\Handler\AppValidationExceptionHandler;
+use App\Exception\Handler\AppRequestExceptionHadnler;
+
 return [
     'handler' => [
         'http' => [
-            App\Exception\Handler\AppValidationExceptionHandler::class, //数据验证
-            App\Exception\Handler\AppNotFoundExceptionHandler::class,//404
-            App\Exception\Handler\AppBadRequestExceptionHandler::class,//0
-            App\Exception\Handler\AppCsrfRequestExceptionHandler::class,//419
-            App\Exception\Handler\UnauthorizedExceptionHandler::class,//408
-            App\Exception\Handler\AppExceptionHandler::class,   //系统自带
+            AppExceptionHandler::class,//默认
+            AppValidationExceptionHandler::class,//验证
+            AppRequestExceptionHadnler::class,//请求错误
 
         ],
     ],

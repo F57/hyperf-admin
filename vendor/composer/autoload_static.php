@@ -4,23 +4,24 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit7f67a0eeaa0e769ca3b94ac40c9024d7
+class ComposerStaticInit3cbb0decfe28d775b94d3d16c200ddc1
 {
     public static $files = array (
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
-        '59af96974553a1fc6407327354b6f47e' => __DIR__ . '/..' . '/nette/di/src/compatibility.php',
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '0d59ee240a4cd96ddbb4ff164fccea4d' => __DIR__ . '/..' . '/symfony/polyfill-php73/bootstrap.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
-        '023d27dca8066ef29e6739335ea73bad' => __DIR__ . '/..' . '/symfony/polyfill-php70/bootstrap.php',
         '25072dd6e2470089de65ae7bf11d3109' => __DIR__ . '/..' . '/symfony/polyfill-php72/bootstrap.php',
+        '023d27dca8066ef29e6739335ea73bad' => __DIR__ . '/..' . '/symfony/polyfill-php70/bootstrap.php',
         'bbeb7603826cb9296dde3ca1a840af47' => __DIR__ . '/..' . '/hyperf/utils/src/Functions.php',
+        '7e9bd612cc444b3eed788ebbe46263a0' => __DIR__ . '/..' . '/laminas/laminas-zendframework-bridge/src/autoload.php',
         '46a9bb9cbc7a6a5c34938373dbe690c3' => __DIR__ . '/..' . '/hyperf/di/src/Functions.php',
         '253c157292f75eb38082b5acb06f3f01' => __DIR__ . '/..' . '/nikic/fast-route/src/functions.php',
         '72579e7bd17821bb1321b87411366eae' => __DIR__ . '/..' . '/illuminate/support/helpers.php',
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
+        'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
         '9ecd5fc4cc77829926e562e2b7c63f3a' => __DIR__ . '/..' . '/hyperf/translation/src/Functions.php',
         'd537e427bcfe395a9ccdb86b040f6043' => __DIR__ . '/..' . '/donjan-deng/hyperf-permission/src/helpers.php',
@@ -32,22 +33,9 @@ class ComposerStaticInit7f67a0eeaa0e769ca3b94ac40c9024d7
         array (
             'phpDocumentor\\Reflection\\' => 25,
         ),
-        'm' => 
-        array (
-            'malkusch\\lock\\' => 14,
-        ),
         'd' => 
         array (
             'duncan3dc\\Laravel\\' => 18,
-        ),
-        'b' => 
-        array (
-            'bandwidthThrottle\\tokenBucket\\' => 30,
-        ),
-        'Z' => 
-        array (
-            'Zend\\Stdlib\\' => 12,
-            'Zend\\Mime\\' => 10,
         ),
         'W' => 
         array (
@@ -59,6 +47,7 @@ class ComposerStaticInit7f67a0eeaa0e769ca3b94ac40c9024d7
             'Symfony\\Polyfill\\Php72\\' => 23,
             'Symfony\\Polyfill\\Php70\\' => 23,
             'Symfony\\Polyfill\\Mbstring\\' => 26,
+            'Symfony\\Polyfill\\Intl\\Idn\\' => 26,
             'Symfony\\Polyfill\\Ctype\\' => 23,
             'Symfony\\Contracts\\Translation\\' => 30,
             'Symfony\\Contracts\\Service\\' => 26,
@@ -87,7 +76,6 @@ class ComposerStaticInit7f67a0eeaa0e769ca3b94ac40c9024d7
             'Psr\\EventDispatcher\\' => 20,
             'Psr\\Container\\' => 14,
             'Prophecy\\' => 9,
-            'Phper666\\JwtAuth\\' => 17,
             'PhpParser\\' => 10,
             'PhpOption\\' => 10,
             'PhpDocReader\\' => 13,
@@ -103,7 +91,9 @@ class ComposerStaticInit7f67a0eeaa0e769ca3b94ac40c9024d7
         ),
         'L' => 
         array (
-            'Lcobucci\\JWT\\' => 13,
+            'Laminas\\ZendFrameworkBridge\\' => 28,
+            'Laminas\\Stdlib\\' => 15,
+            'Laminas\\Mime\\' => 13,
         ),
         'J' => 
         array (
@@ -129,7 +119,6 @@ class ComposerStaticInit7f67a0eeaa0e769ca3b94ac40c9024d7
             'Hyperf\\Session\\' => 15,
             'Hyperf\\Server\\' => 14,
             'Hyperf\\Redis\\' => 13,
-            'Hyperf\\RateLimit\\' => 17,
             'Hyperf\\Process\\' => 15,
             'Hyperf\\Pool\\' => 12,
             'Hyperf\\Paginator\\' => 17,
@@ -152,6 +141,7 @@ class ComposerStaticInit7f67a0eeaa0e769ca3b94ac40c9024d7
             'Hyperf\\Config\\' => 14,
             'Hyperf\\Command\\' => 15,
             'Hyperf\\Cache\\' => 13,
+            'Hyperf\\AsyncQueue\\' => 18,
             'HyperfTest\\' => 11,
         ),
         'G' => 
@@ -203,25 +193,9 @@ class ComposerStaticInit7f67a0eeaa0e769ca3b94ac40c9024d7
             1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
             2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
         ),
-        'malkusch\\lock\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/malkusch/lock/classes',
-        ),
         'duncan3dc\\Laravel\\' => 
         array (
             0 => __DIR__ . '/..' . '/duncan3dc/blade/src',
-        ),
-        'bandwidthThrottle\\tokenBucket\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/bandwidth-throttle/token-bucket/classes',
-        ),
-        'Zend\\Stdlib\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/zendframework/zend-stdlib/src',
-        ),
-        'Zend\\Mime\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/zendframework/zend-mime/src',
         ),
         'Webmozart\\Assert\\' => 
         array (
@@ -242,6 +216,10 @@ class ComposerStaticInit7f67a0eeaa0e769ca3b94ac40c9024d7
         'Symfony\\Polyfill\\Mbstring\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
+        ),
+        'Symfony\\Polyfill\\Intl\\Idn\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-intl-idn',
         ),
         'Symfony\\Polyfill\\Ctype\\' => 
         array (
@@ -344,10 +322,6 @@ class ComposerStaticInit7f67a0eeaa0e769ca3b94ac40c9024d7
         array (
             0 => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy',
         ),
-        'Phper666\\JwtAuth\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/phper666/jwt-auth/src',
-        ),
         'PhpParser\\' => 
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
@@ -384,9 +358,17 @@ class ComposerStaticInit7f67a0eeaa0e769ca3b94ac40c9024d7
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
         ),
-        'Lcobucci\\JWT\\' => 
+        'Laminas\\ZendFrameworkBridge\\' => 
         array (
-            0 => __DIR__ . '/..' . '/lcobucci/jwt/src',
+            0 => __DIR__ . '/..' . '/laminas/laminas-zendframework-bridge/src',
+        ),
+        'Laminas\\Stdlib\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laminas/laminas-stdlib/src',
+        ),
+        'Laminas\\Mime\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laminas/laminas-mime/src',
         ),
         'Jean85\\' => 
         array (
@@ -451,10 +433,6 @@ class ComposerStaticInit7f67a0eeaa0e769ca3b94ac40c9024d7
         'Hyperf\\Redis\\' => 
         array (
             0 => __DIR__ . '/..' . '/hyperf/redis/src',
-        ),
-        'Hyperf\\RateLimit\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/hyperf/rate-limit/src',
         ),
         'Hyperf\\Process\\' => 
         array (
@@ -543,6 +521,10 @@ class ComposerStaticInit7f67a0eeaa0e769ca3b94ac40c9024d7
         'Hyperf\\Cache\\' => 
         array (
             0 => __DIR__ . '/..' . '/hyperf/cache/src',
+        ),
+        'Hyperf\\AsyncQueue\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/hyperf/async-queue/src',
         ),
         'HyperfTest\\' => 
         array (
@@ -743,6 +725,7 @@ class ComposerStaticInit7f67a0eeaa0e769ca3b94ac40c9024d7
         'Nette\\DI\\Config\\Adapters\\PhpAdapter' => __DIR__ . '/..' . '/nette/di/src/DI/Config/Adapters/PhpAdapter.php',
         'Nette\\DI\\Config\\DefinitionSchema' => __DIR__ . '/..' . '/nette/di/src/DI/Config/DefinitionSchema.php',
         'Nette\\DI\\Config\\Helpers' => __DIR__ . '/..' . '/nette/di/src/DI/Config/Helpers.php',
+        'Nette\\DI\\Config\\IAdapter' => __DIR__ . '/..' . '/nette/di/src/compatibility.php',
         'Nette\\DI\\Config\\Loader' => __DIR__ . '/..' . '/nette/di/src/DI/Config/Loader.php',
         'Nette\\DI\\Container' => __DIR__ . '/..' . '/nette/di/src/DI/Container.php',
         'Nette\\DI\\ContainerBuilder' => __DIR__ . '/..' . '/nette/di/src/DI/ContainerBuilder.php',
@@ -773,6 +756,8 @@ class ComposerStaticInit7f67a0eeaa0e769ca3b94ac40c9024d7
         'Nette\\DI\\PhpGenerator' => __DIR__ . '/..' . '/nette/di/src/DI/PhpGenerator.php',
         'Nette\\DI\\Resolver' => __DIR__ . '/..' . '/nette/di/src/DI/Resolver.php',
         'Nette\\DI\\ServiceCreationException' => __DIR__ . '/..' . '/nette/di/src/DI/exceptions.php',
+        'Nette\\DI\\ServiceDefinition' => __DIR__ . '/..' . '/nette/di/src/compatibility.php',
+        'Nette\\DI\\Statement' => __DIR__ . '/..' . '/nette/di/src/compatibility.php',
         'Nette\\DeprecatedException' => __DIR__ . '/..' . '/nette/utils/src/Utils/exceptions.php',
         'Nette\\DirectoryNotFoundException' => __DIR__ . '/..' . '/nette/utils/src/Utils/exceptions.php',
         'Nette\\FileNotFoundException' => __DIR__ . '/..' . '/nette/utils/src/Utils/exceptions.php',
@@ -799,6 +784,7 @@ class ComposerStaticInit7f67a0eeaa0e769ca3b94ac40c9024d7
         'Nette\\PhpGenerator\\Factory' => __DIR__ . '/..' . '/nette/php-generator/src/PhpGenerator/Factory.php',
         'Nette\\PhpGenerator\\GlobalFunction' => __DIR__ . '/..' . '/nette/php-generator/src/PhpGenerator/GlobalFunction.php',
         'Nette\\PhpGenerator\\Helpers' => __DIR__ . '/..' . '/nette/php-generator/src/PhpGenerator/Helpers.php',
+        'Nette\\PhpGenerator\\Literal' => __DIR__ . '/..' . '/nette/php-generator/src/PhpGenerator/Literal.php',
         'Nette\\PhpGenerator\\Method' => __DIR__ . '/..' . '/nette/php-generator/src/PhpGenerator/Method.php',
         'Nette\\PhpGenerator\\Parameter' => __DIR__ . '/..' . '/nette/php-generator/src/PhpGenerator/Parameter.php',
         'Nette\\PhpGenerator\\PhpFile' => __DIR__ . '/..' . '/nette/php-generator/src/PhpGenerator/PhpFile.php',
@@ -811,6 +797,7 @@ class ComposerStaticInit7f67a0eeaa0e769ca3b94ac40c9024d7
         'Nette\\PhpGenerator\\Traits\\FunctionLike' => __DIR__ . '/..' . '/nette/php-generator/src/PhpGenerator/Traits/FunctionLike.php',
         'Nette\\PhpGenerator\\Traits\\NameAware' => __DIR__ . '/..' . '/nette/php-generator/src/PhpGenerator/Traits/NameAware.php',
         'Nette\\PhpGenerator\\Traits\\VisibilityAware' => __DIR__ . '/..' . '/nette/php-generator/src/PhpGenerator/Traits/VisibilityAware.php',
+        'Nette\\PhpGenerator\\Type' => __DIR__ . '/..' . '/nette/php-generator/src/PhpGenerator/Type.php',
         'Nette\\Schema\\Context' => __DIR__ . '/..' . '/nette/schema/src/Schema/Context.php',
         'Nette\\Schema\\DynamicParameter' => __DIR__ . '/..' . '/nette/schema/src/Schema/DynamicParameter.php',
         'Nette\\Schema\\Elements\\AnyOf' => __DIR__ . '/..' . '/nette/schema/src/Schema/Elements/AnyOf.php',
@@ -833,6 +820,7 @@ class ComposerStaticInit7f67a0eeaa0e769ca3b94ac40c9024d7
         'Nette\\Utils\\DateTime' => __DIR__ . '/..' . '/nette/utils/src/Utils/DateTime.php',
         'Nette\\Utils\\FileSystem' => __DIR__ . '/..' . '/nette/utils/src/Utils/FileSystem.php',
         'Nette\\Utils\\Finder' => __DIR__ . '/..' . '/nette/finder/src/Utils/Finder.php',
+        'Nette\\Utils\\Helpers' => __DIR__ . '/..' . '/nette/utils/src/Utils/Helpers.php',
         'Nette\\Utils\\Html' => __DIR__ . '/..' . '/nette/utils/src/Utils/Html.php',
         'Nette\\Utils\\IHtmlString' => __DIR__ . '/..' . '/nette/utils/src/Utils/IHtmlString.php',
         'Nette\\Utils\\Image' => __DIR__ . '/..' . '/nette/utils/src/Utils/Image.php',
@@ -1453,10 +1441,10 @@ class ComposerStaticInit7f67a0eeaa0e769ca3b94ac40c9024d7
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit7f67a0eeaa0e769ca3b94ac40c9024d7::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit7f67a0eeaa0e769ca3b94ac40c9024d7::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit7f67a0eeaa0e769ca3b94ac40c9024d7::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit7f67a0eeaa0e769ca3b94ac40c9024d7::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit3cbb0decfe28d775b94d3d16c200ddc1::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit3cbb0decfe28d775b94d3d16c200ddc1::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit3cbb0decfe28d775b94d3d16c200ddc1::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit3cbb0decfe28d775b94d3d16c200ddc1::$classMap;
 
         }, null, ClassLoader::class);
     }

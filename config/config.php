@@ -27,7 +27,6 @@ return [
             LogLevel::WARNING,
         ],
     ],
-
     'captcha'=>[
         'length'=>4,
         'width'=>120,
