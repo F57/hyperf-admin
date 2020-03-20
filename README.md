@@ -33,3 +33,7 @@ php bin/hyperf.php start
 
 `yinqi-Light-Year-Admin-Template-master.zip`
 是后台模板
+
+如果启动失败,那么删除vendor和composer.lock,执行
+
+`composer update`
