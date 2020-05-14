@@ -12,6 +12,8 @@
 * 设置
     * 包括上传设置和网站的简单设置
 
+## <span style="color:red">特别说明：master不兼容1.0版本。<span>
+
 ## 操作步骤
 
 1.创建数据库
@@ -68,5 +70,16 @@ admin@admin.com
 
 
 
+## 图片
+
+![image](https://github.com/XiaoLaoMen/hyperf-admin/blob/master/public/images/1.png)
+
+![image](https://github.com/XiaoLaoMen/hyperf-admin/blob/master/public/images/2.png)
+
+![image](https://github.com/XiaoLaoMen/hyperf-admin/blob/master/public/images/3.png)
+
+![image](https://github.com/XiaoLaoMen/hyperf-admin/blob/master/public/images/4.png)
+
+![image](https://github.com/XiaoLaoMen/hyperf-admin/blob/master/public/images/5.png)
 
 
