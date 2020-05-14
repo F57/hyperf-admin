@@ -1,7 +1,7 @@
-##hyper-admin是什么?
+## hyper-admin是什么?
 一个基于hyperf框架开发的简易后台管理系统
 
-##hyper-admin有哪些功能？
+## hyper-admin有哪些功能？
 
 * 菜单
     * 增删改查，最多可以设计三级菜单，但是由于需要，只显示二级菜单，三级菜单默认隐藏
@@ -12,7 +12,7 @@
 * 设置
     * 包括上传设置和网站的简单设置
 
-##操作步骤
+## 操作步骤
 
 1.创建数据库
 
@@ -56,13 +56,13 @@ admin@admin.com
 admin@admin.com
 ```
 
-##其他说明
+## 其他说明
 
-###start.sh
+### start.sh
 
 这个是linux的启动脚本，需要安装lsof。
 
-###yinqi-Light-Year-Admin-Template-master.zip
+### yinqi-Light-Year-Admin-Template-master.zip
 
 这个是后台的模板
 
