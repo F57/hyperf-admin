@@ -58,14 +58,7 @@ class Render implements RenderInterface
         $this->container = $container;
     }
 
-    public function render(string $template, array $data = []): ResponseInterface
-    {
-        return $this->response()
-            ->withAddedHeader('content-type', 'text/html')
-            ->withBody(new SwooleStream($this->getContents($template, $data)));
-    }
-
-    public function getContents(string $template, array $data = []): string
+    public function render(string $template, array $data = [])
     {
         switch ($this->mode) {
             case Mode::SYNC:
@@ -77,10 +70,9 @@ class Render implements RenderInterface
             default:
                 $executor = $this->container->get(TaskExecutor::class);
                 $result = $executor->execute(new Task([$this->engine, 'render'], [$template, $data, $this->config]));
-                break;
         }
 
-        return $result;
+        return $this->response()->withAddedHeader('content-type', 'text/html')->withBody(new SwooleStream($result));
     }
 
     protected function response(): ResponseInterface

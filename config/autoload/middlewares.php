@@ -9,22 +9,17 @@ declare(strict_types=1);
  * @contact  group@hyperf.io
  * @license  https://github.com/hyperf-cloud/hyperf/blob/master/LICENSE
  */
-use Hyperf\Validation\Middleware\ValidationMiddleware;
-use Hyperf\Session\Middleware\SessionMiddleware;
-use App\Middleware\FilterMiddleware;
-use App\Middleware\Http\CsrfMiddleware;
-use App\Middleware\Http\LoginMiddleware;
-use App\Middleware\Http\AuthMiddleware;
-use App\Middleware\Http\UserOperateMiddleware;
 
 return [
     'http' => [
-        SessionMiddleware::class,//session
-        LoginMiddleware::class,//后台login
-        AuthMiddleware::class,//后台auth
-        CsrfMiddleware::class,//csrf
-        FilterMiddleware::class,//过滤参数
-        ValidationMiddleware::class,//验证器
-        UserOperateMiddleware::class,//后台用户操作记录
+        \Hyperf\Session\Middleware\SessionMiddleware::class,//session
+        \App\Middleware\HeaderMiddleware::class,//设置头信息
+        \App\Middleware\CsrfMiddleware::class,//csrf验证
+        \App\Middleware\AllowIpMiddleware::class,//后台允许访问的ip
+        \App\Middleware\LoginMiddleware::class,//后台登录
+        \App\Middleware\AuthMiddleware::class,//后天权限
+        \Hyperf\Validation\Middleware\ValidationMiddleware::class,//数据验证
+        \App\Middleware\FilterMiddleware::class,//过滤数据
+
     ],
 ];

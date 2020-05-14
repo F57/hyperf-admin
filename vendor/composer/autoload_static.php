@@ -4,14 +4,14 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit3cbb0decfe28d775b94d3d16c200ddc1
+class ComposerStaticInit7f67a0eeaa0e769ca3b94ac40c9024d7
 {
     public static $files = array (
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
-        '0d59ee240a4cd96ddbb4ff164fccea4d' => __DIR__ . '/..' . '/symfony/polyfill-php73/bootstrap.php',
-        '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         '25072dd6e2470089de65ae7bf11d3109' => __DIR__ . '/..' . '/symfony/polyfill-php72/bootstrap.php',
+        'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
+        '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         '023d27dca8066ef29e6739335ea73bad' => __DIR__ . '/..' . '/symfony/polyfill-php70/bootstrap.php',
         'bbeb7603826cb9296dde3ca1a840af47' => __DIR__ . '/..' . '/hyperf/utils/src/Functions.php',
         '7e9bd612cc444b3eed788ebbe46263a0' => __DIR__ . '/..' . '/laminas/laminas-zendframework-bridge/src/autoload.php',
@@ -21,7 +21,6 @@ class ComposerStaticInit3cbb0decfe28d775b94d3d16c200ddc1
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
-        'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
         '9ecd5fc4cc77829926e562e2b7c63f3a' => __DIR__ . '/..' . '/hyperf/translation/src/Functions.php',
         'd537e427bcfe395a9ccdb86b040f6043' => __DIR__ . '/..' . '/donjan-deng/hyperf-permission/src/helpers.php',
@@ -33,9 +32,17 @@ class ComposerStaticInit3cbb0decfe28d775b94d3d16c200ddc1
         array (
             'phpDocumentor\\Reflection\\' => 25,
         ),
+        'm' => 
+        array (
+            'malkusch\\lock\\' => 14,
+        ),
         'd' => 
         array (
             'duncan3dc\\Laravel\\' => 18,
+        ),
+        'b' => 
+        array (
+            'bandwidthThrottle\\tokenBucket\\' => 30,
         ),
         'W' => 
         array (
@@ -43,7 +50,6 @@ class ComposerStaticInit3cbb0decfe28d775b94d3d16c200ddc1
         ),
         'S' => 
         array (
-            'Symfony\\Polyfill\\Php73\\' => 23,
             'Symfony\\Polyfill\\Php72\\' => 23,
             'Symfony\\Polyfill\\Php70\\' => 23,
             'Symfony\\Polyfill\\Mbstring\\' => 26,
@@ -52,6 +58,7 @@ class ComposerStaticInit3cbb0decfe28d775b94d3d16c200ddc1
             'Symfony\\Contracts\\Translation\\' => 30,
             'Symfony\\Contracts\\Service\\' => 26,
             'Symfony\\Contracts\\EventDispatcher\\' => 34,
+            'Symfony\\Contracts\\' => 18,
             'Symfony\\Component\\Translation\\' => 30,
             'Symfony\\Component\\Stopwatch\\' => 28,
             'Symfony\\Component\\Serializer\\' => 29,
@@ -76,6 +83,7 @@ class ComposerStaticInit3cbb0decfe28d775b94d3d16c200ddc1
             'Psr\\EventDispatcher\\' => 20,
             'Psr\\Container\\' => 14,
             'Prophecy\\' => 9,
+            'Phper666\\JwtAuth\\' => 17,
             'PhpParser\\' => 10,
             'PhpOption\\' => 10,
             'PhpDocReader\\' => 13,
@@ -91,6 +99,7 @@ class ComposerStaticInit3cbb0decfe28d775b94d3d16c200ddc1
         ),
         'L' => 
         array (
+            'Lcobucci\\JWT\\' => 13,
             'Laminas\\ZendFrameworkBridge\\' => 28,
             'Laminas\\Stdlib\\' => 15,
             'Laminas\\Mime\\' => 13,
@@ -119,6 +128,7 @@ class ComposerStaticInit3cbb0decfe28d775b94d3d16c200ddc1
             'Hyperf\\Session\\' => 15,
             'Hyperf\\Server\\' => 14,
             'Hyperf\\Redis\\' => 13,
+            'Hyperf\\RateLimit\\' => 17,
             'Hyperf\\Process\\' => 15,
             'Hyperf\\Pool\\' => 12,
             'Hyperf\\Paginator\\' => 17,
@@ -136,12 +146,12 @@ class ComposerStaticInit3cbb0decfe28d775b94d3d16c200ddc1
             'Hyperf\\Devtool\\' => 15,
             'Hyperf\\DbConnection\\' => 20,
             'Hyperf\\Database\\' => 16,
+            'Hyperf\\Crontab\\' => 15,
             'Hyperf\\Contract\\' => 16,
             'Hyperf\\Constants\\' => 17,
             'Hyperf\\Config\\' => 14,
             'Hyperf\\Command\\' => 15,
             'Hyperf\\Cache\\' => 13,
-            'Hyperf\\AsyncQueue\\' => 18,
             'HyperfTest\\' => 11,
         ),
         'G' => 
@@ -193,17 +203,21 @@ class ComposerStaticInit3cbb0decfe28d775b94d3d16c200ddc1
             1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
             2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
         ),
+        'malkusch\\lock\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/malkusch/lock/classes',
+        ),
         'duncan3dc\\Laravel\\' => 
         array (
             0 => __DIR__ . '/..' . '/duncan3dc/blade/src',
         ),
+        'bandwidthThrottle\\tokenBucket\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/bandwidth-throttle/token-bucket/classes',
+        ),
         'Webmozart\\Assert\\' => 
         array (
             0 => __DIR__ . '/..' . '/webmozart/assert/src',
-        ),
-        'Symfony\\Polyfill\\Php73\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/polyfill-php73',
         ),
         'Symfony\\Polyfill\\Php72\\' => 
         array (
@@ -236,6 +250,10 @@ class ComposerStaticInit3cbb0decfe28d775b94d3d16c200ddc1
         'Symfony\\Contracts\\EventDispatcher\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/event-dispatcher-contracts',
+        ),
+        'Symfony\\Contracts\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/contracts',
         ),
         'Symfony\\Component\\Translation\\' => 
         array (
@@ -322,6 +340,10 @@ class ComposerStaticInit3cbb0decfe28d775b94d3d16c200ddc1
         array (
             0 => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy',
         ),
+        'Phper666\\JwtAuth\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phper666/jwt-auth/src',
+        ),
         'PhpParser\\' => 
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
@@ -357,6 +379,10 @@ class ComposerStaticInit3cbb0decfe28d775b94d3d16c200ddc1
         'Monolog\\' => 
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
+        ),
+        'Lcobucci\\JWT\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/lcobucci/jwt/src',
         ),
         'Laminas\\ZendFrameworkBridge\\' => 
         array (
@@ -434,6 +460,10 @@ class ComposerStaticInit3cbb0decfe28d775b94d3d16c200ddc1
         array (
             0 => __DIR__ . '/..' . '/hyperf/redis/src',
         ),
+        'Hyperf\\RateLimit\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/hyperf/rate-limit/src',
+        ),
         'Hyperf\\Process\\' => 
         array (
             0 => __DIR__ . '/..' . '/hyperf/process/src',
@@ -502,6 +532,10 @@ class ComposerStaticInit3cbb0decfe28d775b94d3d16c200ddc1
         array (
             0 => __DIR__ . '/..' . '/hyperf/database/src',
         ),
+        'Hyperf\\Crontab\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/hyperf/crontab/src',
+        ),
         'Hyperf\\Contract\\' => 
         array (
             0 => __DIR__ . '/..' . '/hyperf/contract/src',
@@ -521,10 +555,6 @@ class ComposerStaticInit3cbb0decfe28d775b94d3d16c200ddc1
         'Hyperf\\Cache\\' => 
         array (
             0 => __DIR__ . '/..' . '/hyperf/cache/src',
-        ),
-        'Hyperf\\AsyncQueue\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/hyperf/async-queue/src',
         ),
         'HyperfTest\\' => 
         array (
@@ -713,7 +743,6 @@ class ComposerStaticInit3cbb0decfe28d775b94d3d16c200ddc1
         'Hamcrest\\Type\\IsString' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Type/IsString.php',
         'Hamcrest\\Util' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Util.php',
         'Hamcrest\\Xml\\HasXPath' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Xml/HasXPath.php',
-        'JsonException' => __DIR__ . '/..' . '/symfony/polyfill-php73/Resources/stubs/JsonException.php',
         'Nette\\ArgumentOutOfRangeException' => __DIR__ . '/..' . '/nette/utils/src/Utils/exceptions.php',
         'Nette\\Bridges\\DITracy\\ContainerPanel' => __DIR__ . '/..' . '/nette/di/src/Bridges/DITracy/ContainerPanel.php',
         'Nette\\Configurator' => __DIR__ . '/..' . '/nette/bootstrap/src/Bootstrap/Configurator.php',
@@ -1441,10 +1470,10 @@ class ComposerStaticInit3cbb0decfe28d775b94d3d16c200ddc1
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit3cbb0decfe28d775b94d3d16c200ddc1::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit3cbb0decfe28d775b94d3d16c200ddc1::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit3cbb0decfe28d775b94d3d16c200ddc1::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit3cbb0decfe28d775b94d3d16c200ddc1::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit7f67a0eeaa0e769ca3b94ac40c9024d7::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit7f67a0eeaa0e769ca3b94ac40c9024d7::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit7f67a0eeaa0e769ca3b94ac40c9024d7::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit7f67a0eeaa0e769ca3b94ac40c9024d7::$classMap;
 
         }, null, ClassLoader::class);
     }

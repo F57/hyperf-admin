@@ -2,11 +2,11 @@
 declare(strict_types=1);
 
 use Hyperf\View\Mode;
-use Hyperf\View\Engine\BladeEngine;
+use App\Engine\TemplateEngine;
 
 return [
     // 使用的渲染引擎
-    'engine' => BladeEngine::class,
+    'engine' => TemplateEngine::class,
     // 不填写则默认为 Task 模式，推荐使用 Task 模式
     'mode' => Mode::TASK,
     'config' => [

@@ -117,11 +117,7 @@ class Server implements OnRequestInterface, MiddlewareInitializerInterface
             if (! isset($psr7Response) || ! $psr7Response instanceof Sendable) {
                 return;
             }
-            if ($psr7Request->getMethod() === 'HEAD') {
-                $psr7Response->send(false);
-            } else {
-                $psr7Response->send(true);
-            }
+            $psr7Response->send();
         }
     }
 

@@ -73,6 +73,6 @@ class CustomNormalizer implements NormalizerInterface, DenormalizerInterface, Se
      */
     public function hasCacheableSupportsMethod(): bool
     {
-        return __CLASS__ === static::class;
+        return __CLASS__ === \get_class($this);
     }
 }

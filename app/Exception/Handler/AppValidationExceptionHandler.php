@@ -8,10 +8,10 @@ use Hyperf\Di\Annotation\Inject;
 use Psr\Http\Message\ResponseInterface;
 use Hyperf\HttpMessage\Stream\SwooleStream;
 use Throwable;
+use App\Helpers\Helper;
+use App\Helpers\Code;
 use Hyperf\ExceptionHandler\ExceptionHandler;
 use Hyperf\Validation\ValidationException;
-use App\Helper\Helper;
-use App\Constants\Code;
 
 class AppValidationExceptionHandler extends ExceptionHandler {
 
@@ -27,9 +27,9 @@ class AppValidationExceptionHandler extends ExceptionHandler {
 
         $message = $throwable->validator->errors()->first();
 
-        $result = $this->helper->error(Code::VALIDATA_ERROR, $message);
+        $result = $this->helper->error(Code::VALIDATE_ERROR, $message);
 
-        return $response->withStatus(200)
+        return $response->withStatus(Code::SUCCESS)
             ->withAddedHeader('content-type', 'application/json')
             ->withBody(new SwooleStream($this->helper->jsonEncode($result)));
     }

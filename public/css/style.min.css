@@ -2765,7 +2765,7 @@ dd, dt {
 	vertical-align: middle;
 }
 .card-body {
-    padding: 24px 24px;
+    padding: 10px 24px;
 }
 .card-header .h4,
 .card-header h4 {
@@ -3182,7 +3182,11 @@ dd, dt {
     border-color: #33cabb;
     color: #33cabb;
 }
-
+.total-info{
+    float: left;
+    margin-right: 20px;
+    line-height: 30px;
+}
 /** ----------------------------------
  * 响应式处理
  -------------------------------------- */

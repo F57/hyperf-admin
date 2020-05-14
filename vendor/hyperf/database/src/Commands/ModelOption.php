@@ -14,10 +14,6 @@ namespace Hyperf\Database\Commands;
 
 class ModelOption
 {
-    const PROPERTY_SNAKE_CASE = 0;
-
-    const PROPERTY_CAMEL_CASE = 1;
-
     /**
      * @var string
      */
@@ -68,22 +64,12 @@ class ModelOption
      */
     protected $ignoreTables = [];
 
-    /**
-     * @var array
-     */
-    protected $visitors = [];
-
-    /**
-     * @var int
-     */
-    protected $propertyCase = self::PROPERTY_SNAKE_CASE;
-
     public function getPool(): string
     {
         return $this->pool;
     }
 
-    public function setPool(string $pool): self
+    public function setPool(string $pool): ModelOption
     {
         $this->pool = $pool;
         return $this;
@@ -94,7 +80,7 @@ class ModelOption
         return $this->path;
     }
 
-    public function setPath(string $path): self
+    public function setPath(string $path): ModelOption
     {
         $this->path = $path;
         return $this;
@@ -105,7 +91,7 @@ class ModelOption
         return $this->forceCasts;
     }
 
-    public function setForceCasts(bool $forceCasts): self
+    public function setForceCasts(bool $forceCasts): ModelOption
     {
         $this->forceCasts = $forceCasts;
         return $this;
@@ -116,7 +102,7 @@ class ModelOption
         return $this->prefix;
     }
 
-    public function setPrefix(string $prefix): self
+    public function setPrefix(string $prefix): ModelOption
     {
         $this->prefix = $prefix;
         return $this;
@@ -127,7 +113,7 @@ class ModelOption
         return $this->inheritance;
     }
 
-    public function setInheritance(string $inheritance): self
+    public function setInheritance(string $inheritance): ModelOption
     {
         $this->inheritance = $inheritance;
         return $this;
@@ -138,7 +124,7 @@ class ModelOption
         return $this->uses;
     }
 
-    public function setUses(string $uses): self
+    public function setUses(string $uses): ModelOption
     {
         $this->uses = $uses;
         return $this;
@@ -149,7 +135,7 @@ class ModelOption
         return $this->refreshFillable;
     }
 
-    public function setRefreshFillable(bool $refreshFillable): self
+    public function setRefreshFillable(bool $refreshFillable): ModelOption
     {
         $this->refreshFillable = $refreshFillable;
         return $this;
@@ -160,7 +146,7 @@ class ModelOption
         return $this->tableMapping;
     }
 
-    public function setTableMapping(array $tableMapping): self
+    public function setTableMapping(array $tableMapping): ModelOption
     {
         foreach ($tableMapping as $item) {
             [$key, $name] = explode(':', $item);
@@ -175,7 +161,7 @@ class ModelOption
         return $this->ignoreTables;
     }
 
-    public function setIgnoreTables(array $ignoreTables): self
+    public function setIgnoreTables(array $ignoreTables): ModelOption
     {
         $this->ignoreTables = $ignoreTables;
         return $this;
@@ -186,31 +172,9 @@ class ModelOption
         return $this->withComments;
     }
 
-    public function setWithComments(bool $withComments): self
+    public function setWithComments(bool $withComments): ModelOption
     {
         $this->withComments = $withComments;
-        return $this;
-    }
-
-    public function getVisitors(): array
-    {
-        return $this->visitors;
-    }
-
-    public function setVisitors(array $visitors): self
-    {
-        $this->visitors = $visitors;
-        return $this;
-    }
-
-    public function isCamelCase(): bool
-    {
-        return $this->propertyCase === self::PROPERTY_CAMEL_CASE;
-    }
-
-    public function setPropertyCase($propertyCase): self
-    {
-        $this->propertyCase = (int) $propertyCase;
         return $this;
     }
 }

@@ -12,7 +12,7 @@ use Psr\Http\Server\RequestHandlerInterface;
 use Hyperf\Utils\Context;
 
 /**
- * 过滤post和get参数
+ * 过滤参数
  * Class FilterMiddleware
  * @package App\Middleware
  */

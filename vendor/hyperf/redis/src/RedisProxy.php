@@ -24,10 +24,4 @@ class RedisProxy extends Redis
 
         $this->poolName = $pool;
     }
-
-    public function __call($name, $arguments)
-    {
-        return parent::__call($name, $arguments);
-    }
-
 }

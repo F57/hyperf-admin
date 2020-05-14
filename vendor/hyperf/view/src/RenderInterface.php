@@ -12,11 +12,7 @@ declare(strict_types=1);
 
 namespace Hyperf\View;
 
-use Psr\Http\Message\ResponseInterface;
-
 interface RenderInterface
 {
-    public function render(string $template, array $data = []): ResponseInterface;
-
-    public function getContents(string $template, array $data = []): string;
+    public function render(string $template, array $data = []);
 }

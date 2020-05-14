@@ -18,5 +18,6 @@ return [
         'connection' => 'default',
         'path' => BASE_PATH . '/runtime/session',
         'gc_maxlifetime' => 7200,
+        'session_name' => 'lalala',
     ],
 ];

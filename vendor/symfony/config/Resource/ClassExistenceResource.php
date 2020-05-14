@@ -94,8 +94,6 @@ class ClassExistenceResource implements SelfCheckingResourceInterface
                 }
             } catch (\Throwable $e) {
                 $exists[1] = $e->getMessage();
-
-                throw $e;
             } finally {
                 self::$autoloadedClass = $autoloadedClass;
                 if (!--self::$autoloadLevel) {
