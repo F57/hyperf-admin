@@ -27,7 +27,7 @@
                                     </th>
                                     <th>编号</th>
                                     <th>权限</th>
-                                    <th>说明</th>
+                                    <th>菜单名称</th>
                                     <th>地址</th>
                                     <th>图标</th>
                                     <th>排序</th>
@@ -179,7 +179,7 @@
                             <input type="text" class="form-control" name="name">
                         </div>
                         <div class="form-group">
-                            <label for="recipient-name" class="control-label">说明</label>
+                            <label for="recipient-name" class="control-label">菜单名称</label>
                             <input type="text" class="form-control" name="display_name">
                         </div>
                         <div class="form-group">
@@ -244,7 +244,7 @@
                             <input type="text" class="form-control" name="name" id="name">
                         </div>
                         <div class="form-group">
-                            <label for="recipient-name" class="control-label">说明</label>
+                            <label for="recipient-name" class="control-label">菜单名称</label>
                             <input type="text" class="form-control" name="display_name" id="display_name">
                         </div>
                         <div class="form-group">

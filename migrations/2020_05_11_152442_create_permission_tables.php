@@ -20,7 +20,7 @@ class CreatePermissionTables extends Migration
             $table->bigIncrements('id');
             $table->integer('parent_id')->default(0);
             $table->string('name');
-            $table->string('display_name', 50)->comment('名称');
+            $table->string('display_name', 50)->comment('菜单名称');
             $table->string('url', 255);
             $table->string('icon', 255)->default('');
             $table->string('guard_name')->default('');
