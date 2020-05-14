@@ -72,14 +72,14 @@ admin@admin.com
 
 ## 图片
 
-![image](https://github.com/XiaoLaoMen/hyperf-admin/blob/master/public/images/1.png)
+![image](https://github.com/XiaoLaoMen/hyperf-admin/blob/master/ScreenShots/1.png)
 
-![image](https://github.com/XiaoLaoMen/hyperf-admin/blob/master/public/images/2.png)
+![image](https://github.com/XiaoLaoMen/hyperf-admin/blob/master/ScreenShots/2.png)
 
-![image](https://github.com/XiaoLaoMen/hyperf-admin/blob/master/public/images/3.png)
+![image](https://github.com/XiaoLaoMen/hyperf-admin/blob/master/ScreenShots/3.png)
 
-![image](https://github.com/XiaoLaoMen/hyperf-admin/blob/master/public/images/4.png)
+![image](https://github.com/XiaoLaoMen/hyperf-admin/blob/master/ScreenShots/4.png)
 
-![image](https://github.com/XiaoLaoMen/hyperf-admin/blob/master/public/images/5.png)
+![image](https://github.com/XiaoLaoMen/hyperf-admin/blob/master/ScreenShots/5.png)
 
 
