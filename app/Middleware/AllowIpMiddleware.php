@@ -6,7 +6,6 @@ namespace App\Middleware;
 
 use App\Exception\AppNotFoundException;
 use App\Helpers\Helper;
-use Psr\Container\ContainerInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Server\MiddlewareInterface;
 use Psr\Http\Message\ServerRequestInterface;
@@ -15,10 +14,6 @@ use Hyperf\Di\Annotation\Inject;
 
 class AllowIpMiddleware implements MiddlewareInterface
 {
-    /**
-     * @var ContainerInterface
-     */
-    protected $container;
 
     /**
      * @Inject()
@@ -26,10 +21,6 @@ class AllowIpMiddleware implements MiddlewareInterface
      */
     private $help;
 
-    public function __construct(ContainerInterface $container)
-    {
-        $this->container = $container;
-    }
 
     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {

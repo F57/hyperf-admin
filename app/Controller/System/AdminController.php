@@ -28,7 +28,7 @@ class AdminController extends AbstractController
     {
         $list = $this->page->getHtml($admin->getListByPage());
         $roles = $role::all()->toArray();
-        return $this->render->render('system.admin.index',$this->helper->initData(['list'=>$list,'roles'=>$roles]));
+        return $this->render->render('system.admin.index',$this->other->initData(['list'=>$list,'roles'=>$roles]));
 
     }
 
@@ -117,7 +117,7 @@ class AdminController extends AbstractController
      */
     public function profile(RenderInterface $render)
     {
-        return $render->render('system.admin.profile',$this->helper->initData());
+        return $render->render('system.admin.profile',$this->other->initData());
     }
 
     /**

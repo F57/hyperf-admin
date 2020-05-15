@@ -8,7 +8,6 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\MiddlewareInterface;
 use Psr\Http\Server\RequestHandlerInterface;
-use Hyperf\Contract\ConfigInterface;
 use Hyperf\Di\Annotation\Inject;
 use App\Helpers\Helper;
 use Hyperf\HttpMessage\Cookie\Cookie;
@@ -16,11 +15,6 @@ use Hyperf\HttpMessage\Cookie\Cookie;
 class HeaderMiddleware implements MiddlewareInterface
 {
 
-    /**
-     * @Inject
-     * @var ConfigInterface
-     */
-    protected $config;
 
     /**
      * @Inject

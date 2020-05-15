@@ -25,27 +25,26 @@ class Redis
 
     public function has($key)
     {
-        $result = $this->redis->EXISTS($key);
-        if($result==1){
-            return true;
-        }
-        return false;
+        return $this->redis->exists($key);
     }
     /**
      * 写入缓存
      * @param string $key 键名
      * @param string $value 键值
-     * @param int $exprie 过期时间 0:永不过期
+     * @param int $expire 过期时间 0:永不过期
      * @return bool
      */
-    public function set($key, $value, $exprie = 0)
+    public function set($key, $value, $expire = 0)
     {
-        if ($exprie == 0) {
-            $set = $this->redis->set($key, $value);
+        $value = (is_object($value) || is_array($value)) ? json_encode($value) : $value;
+
+        if (is_int($expire) && $expire) {
+            $result = $this->redis->setex($key, $expire, $value);
         } else {
-            $set = $this->redis->setex($key, $exprie, $value);
+            $result = $this->redis->set($key, $value);
         }
-        return $set;
+
+        return $result;
     }
 
     /**
@@ -55,8 +54,11 @@ class Redis
      */
     public function get($key)
     {
-        $fun = is_array($key) ? 'Mget' : 'get';
-        return $this->redis->{$fun}($key);
+        $value = $this->redis->get($key);
+
+        $jsonData = json_decode($value, true);
+
+        return (null === $jsonData) ? $value : $jsonData;
     }
 
     /**
@@ -68,12 +70,8 @@ class Redis
      */
     public function hSet($name,$filed,$value)
     {
-        $result = $this->redis->hSet($name, $filed, $value);
-        if($result==0 || $result==1){
-            return true;
-        }
-        return false;
-
+        $this->redis->hSet($name, $filed, $value);
+        return true;
     }
 
     /**
@@ -84,7 +82,8 @@ class Redis
      */
     public function hMSet($name,array $data)
     {
-        return $this->redis->hMset($name,$data);
+        $this->redis->hMset($name,$data);
+        return true;
     }
 
     /**

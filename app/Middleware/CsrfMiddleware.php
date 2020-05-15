@@ -10,20 +10,17 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Server\MiddlewareInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
-use App\Helpers\Helper;
+use App\Service\Other;
+use Hyperf\Di\Annotation\Inject;
 
 class CsrfMiddleware implements MiddlewareInterface
 {
 
     /**
-     * @var Helper
+     * @Inject
+     * @var Other
      */
-    protected $helper;
-
-    public function __construct(Helper $helper)
-    {
-        $this->helper = $helper;
-    }
+    protected $other;
 
     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
@@ -41,7 +38,7 @@ class CsrfMiddleware implements MiddlewareInterface
                 throw new AppNotFoundException('验证错误',Code::VALIDATE_ERROR);
             }
 
-            $result = $this->helper->verifyCsrf($csrf);
+            $result = $this->other->verifyCsrf($csrf);
 
             if(!$result){
                 throw new AppNotFoundException('验证错误',Code::VALIDATE_ERROR);

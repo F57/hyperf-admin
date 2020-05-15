@@ -26,7 +26,7 @@ class RoleController extends AbstractController
     public function index(Role $role)
     {
         $list = $role::all();
-        return $this->render->render('system.role.index',$this->helper->initData(['list'=>$list]));
+        return $this->render->render('system.role.index',$this->other->initData(['list'=>$list]));
     }
 
     /**
@@ -103,7 +103,7 @@ class RoleController extends AbstractController
 
 		$roleInfo = $role->where('id',$id)->first();
 		$menuList = $permission::getMenuList();
-		return $this->render->render('system.role.authorize',$this->helper->initData(['menuList'=>$menuList,'roleInfo'=>$roleInfo,'permissions'=>$permissions,'id'=>$id]));
+		return $this->render->render('system.role.authorize',$this->other->initData(['menuList'=>$menuList,'roleInfo'=>$roleInfo,'permissions'=>$permissions,'id'=>$id]));
 	}
 
     /**

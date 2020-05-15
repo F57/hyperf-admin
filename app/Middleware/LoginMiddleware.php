@@ -5,21 +5,15 @@ declare(strict_types=1);
 namespace App\Middleware;
 
 use App\Exception\AppNotFoundException;
-use Psr\Container\ContainerInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Server\MiddlewareInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 use Hyperf\Di\Annotation\Inject;
 use Hyperf\HttpServer\Contract\ResponseInterface as HttpResponseInterface;
-use App\Helpers\Helper;
 
 class LoginMiddleware implements MiddlewareInterface
 {
-    /**
-     * @var ContainerInterface
-     */
-    protected $container;
 
     /**
      * @Inject()
@@ -35,19 +29,14 @@ class LoginMiddleware implements MiddlewareInterface
 
     /**
      * @Inject()
-     * @var Helper
+     * @var \App\Helpers\Helper
      */
-    private $help;
+    private $helper;
 
-
-    public function __construct(ContainerInterface $container)
-    {
-        $this->container = $container;
-    }
 
     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
-        $pathInfo = $this->help->pathInfo();
+        $pathInfo = $this->helper->pathInfo();
 
         if(empty($pathInfo)){
             return $handler->handle($request);

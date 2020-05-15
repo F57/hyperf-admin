@@ -23,7 +23,7 @@ class SetController extends AbstractController
     public function upload(Set $set)
     {
     	$list = $set::all()->toArray();
-    	return $this->render->render('system.set.upload',$this->helper->initData(['list'=>$list]));
+    	return $this->render->render('system.set.upload',$this->other->initData(['list'=>$list]));
     }
 
     /**
@@ -55,6 +55,6 @@ class SetController extends AbstractController
     public function website(Set $set)
     {
         $list = $set::all()->toArray();
-        return $this->render->render('system.set.website',$this->helper->initData(['list'=>$list]));
+        return $this->render->render('system.set.website',$this->other->initData(['list'=>$list]));
     }
 }

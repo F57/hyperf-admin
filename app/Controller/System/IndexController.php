@@ -12,7 +12,6 @@ declare(strict_types=1);
 
 namespace App\Controller\System;
 
-use App\Helpers\Helper;
 use Hyperf\HttpServer\Annotation\AutoController;
 use Hyperf\View\RenderInterface;
 
@@ -23,6 +22,6 @@ class IndexController extends AbstractController
 {
     public function index(RenderInterface $render)
     {
-        return $render->render('system.index.index',$this->helper->initData());
+        return $render->render('system.index.index',$this->other->initData());
     }
 }

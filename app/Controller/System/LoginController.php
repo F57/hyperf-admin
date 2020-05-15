@@ -26,7 +26,7 @@ class LoginController extends AbstractController
      */
     public function index(RenderInterface $render)
     {
-        return $render->render('system.login.index',$this->helper->initData());
+        return $render->render('system.login.index',$this->other->initData());
     }
 
     /**

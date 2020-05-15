@@ -22,6 +22,7 @@ use Hyperf\Contract\SessionInterface;
 use App\Helpers\Helper;
 use Hyperf\View\RenderInterface;
 use App\Service\Page;
+use App\Service\Other;
 
 abstract class AbstractController
 {
@@ -78,5 +79,11 @@ abstract class AbstractController
      * @var Page
      */
     protected $page;
+
+    /**
+     * @Inject
+     * @var Other
+     */
+    protected $other;
 
 }

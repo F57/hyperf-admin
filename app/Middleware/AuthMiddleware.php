@@ -8,7 +8,6 @@ use App\Exception\AppAuthenticationFailureException;
 use App\Exception\AppErrorRequestException;
 use App\Exception\AppNotFoundException;
 use App\Model\Admin;
-use Psr\Container\ContainerInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Server\MiddlewareInterface;
 use Psr\Http\Message\ServerRequestInterface;
@@ -22,11 +21,6 @@ use App\Helpers\Helper;
 
 class AuthMiddleware implements MiddlewareInterface
 {
-    /**
-     * @var ContainerInterface
-     */
-    protected $container;
-
     /**
      * @Inject()
      * @var \Hyperf\Contract\SessionInterface
@@ -51,18 +45,17 @@ class AuthMiddleware implements MiddlewareInterface
      */
     private $redis;
 
+    /**
+     * @Inject()
+     * @var Role
+     */
     protected $role;
 
+    /**
+     * @Inject()
+     * @var Permission
+     */
     protected $permission;
-
-    public function __construct(ContainerInterface $container,Admin $admin,Redis $redis,Role $role,Permission $permission)
-    {
-        $this->container = $container;
-        $this->admin = $admin;
-        $this->Redis = $redis;
-        $this->role = $role;
-        $this->permission = $permission;
-    }
 
     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {

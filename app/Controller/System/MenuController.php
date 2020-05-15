@@ -24,7 +24,7 @@ class MenuController extends AbstractController
 	public function index(Permission $permission)
 	{
 		$list = $permission::getMenuList();
-		return $this->render->render('system.menu.index',$this->helper->initData(['list'=>$list]));
+		return $this->render->render('system.menu.index',$this->other->initData(['list'=>$list]));
 	}
 
     /**
