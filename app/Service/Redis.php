@@ -55,7 +55,9 @@ class Redis
     public function get($key)
     {
         $value = $this->redis->get($key);
-
+        if(!$value){
+            return false;
+        }
         $jsonData = json_decode($value, true);
 
         return (null === $jsonData) ? $value : $jsonData;
