@@ -16,6 +16,7 @@ return [
             App\Exception\Handler\AppValidationExceptionHandler::class, //数据验证
             App\Exception\Handler\AppErrorRequestExceptionHandler::class,//错误请求
             App\Exception\Handler\AppNotFoundExceptionHandler::class,//404
+            App\Exception\Handler\AppAuthenticationFailureExceptionHandler::class,//权限
             App\Exception\Handler\AppExceptionHandler::class,
         ],
     ],

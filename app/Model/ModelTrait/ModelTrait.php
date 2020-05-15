@@ -36,7 +36,7 @@ trait ModelTrait
 
     public function getListByPage($where=[],$num=10)
     {
-        return $this->where($where)->paginate($num);
+        return $this->where($where)->paginate($num)->toArray();
     }
 
 }

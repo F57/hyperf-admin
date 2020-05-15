@@ -48,7 +48,7 @@ class MenuController extends AbstractController
 			return $this->helper->success();
 		}
 
-		throw new AppErrorRequestException('操作失败',Code::OPERATION_FAILED);
+		throw new AppErrorRequestException('请求错误',Code::ERROR);
 	}
 
     /**
@@ -71,7 +71,7 @@ class MenuController extends AbstractController
 			return $this->helper->success();
 		}
 
-		throw new AppErrorRequestException('操作失败',Code::OPERATION_FAILED);
+		throw new AppErrorRequestException('请求错误',Code::ERROR);
 	}
 
     /**
@@ -81,7 +81,7 @@ class MenuController extends AbstractController
 	{
 		$id = $this->request->input('id');
 		if(!is_numeric($id)){
-			throw new AppErrorRequestException('操作失败',Code::OPERATION_FAILED);
+			throw new AppErrorRequestException('请求错误',Code::ERROR);
 		}
 
 		$result = $permission->where('id',$id)->delete();
@@ -91,6 +91,6 @@ class MenuController extends AbstractController
 			return $this->helper->success();
 		}
 
-		throw new AppErrorRequestException('操作失败',Code::OPERATION_FAILED);
+		throw new AppErrorRequestException('请求错误',Code::ERROR);
 	}
 }

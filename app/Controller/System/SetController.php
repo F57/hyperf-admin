@@ -45,7 +45,7 @@ class SetController extends AbstractController
 			return $this->helper->success();
 		} catch(\Throwable $ex){
 			Db::rollBack();
-			throw new AppErrorRequestException('操作失败',Code::OPERATION_FAILED);
+			throw new AppErrorRequestException('请求错误',Code::ERROR);
 		}
 	}
 

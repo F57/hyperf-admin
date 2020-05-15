@@ -32,8 +32,8 @@ class Code extends AbstractConstants {
     const NOT_FOUND = 1002;
 
     /**
-     * @Message("Operation Failed")
+     * @Message("Auth Fail")
      */
-    const OPERATION_FAILED = 1003;
+    const Auth_Fail = 1003;
 
 }

@@ -29,25 +29,25 @@ class CsrfMiddleware implements MiddlewareInterface
     {
         $method = $request->getMethod();
 
-        if($method !='GET'){
-
-            $csrf = $request->getHeader('x-csrf-token')[0] ?? '';
-
-            if($csrf==''){
-				$csrf = $request->getParsedBody()['x-csrf-token'] ?? '';
-			}
-
-            if($csrf==''){
-                throw new AppNotFoundException('验证错误',Code::VALIDATE_ERROR);
-            }
-
-            $result = $this->helper->verifyCsrf($csrf);
-
-            if(!$result){
-                throw new AppNotFoundException('验证错误',Code::VALIDATE_ERROR);
-            }
-
-        }
+//        if($method !='GET'){
+//
+//            $csrf = $request->getHeader('x-csrf-token')[0] ?? '';
+//
+//            if($csrf==''){
+//				$csrf = $request->getParsedBody()['x-csrf-token'] ?? '';
+//			}
+//
+//            if($csrf==''){
+//                throw new AppNotFoundException('验证错误',Code::VALIDATE_ERROR);
+//            }
+//
+//            $result = $this->helper->verifyCsrf($csrf);
+//
+//            if(!$result){
+//                throw new AppNotFoundException('验证错误',Code::VALIDATE_ERROR);
+//            }
+//
+//        }
 
         return $handler->handle($request);
     }

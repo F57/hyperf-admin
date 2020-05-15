@@ -136,7 +136,7 @@ class UploadController
         }
 
         $file = $request->file($uploadFile);
-        var_dump($file);
+
         if(!$this->getError($file)){
             throw new AppErrorRequestException('上传文件出错,请重试',Code::ERROR);
         }

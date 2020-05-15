@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\Controller\System;
 
-
 use App\Exception\AppErrorRequestException;
 use App\Helpers\Code;
 use App\Request\System\RoleRequest;
@@ -45,7 +44,7 @@ class RoleController extends AbstractController
             return $this->helper->success();
         }
 
-        throw new AppErrorRequestException('操作失败',Code::OPERATION_FAILED);
+        throw new AppErrorRequestException('请求错误',Code::ERROR);
     }
 
     /**
@@ -63,7 +62,7 @@ class RoleController extends AbstractController
 			return $this->helper->success();
 		}
 
-        throw new AppErrorRequestException('操作失败',Code::OPERATION_FAILED);
+        throw new AppErrorRequestException('请求错误',Code::ERROR);
 	}
 
     /**
@@ -73,7 +72,7 @@ class RoleController extends AbstractController
 	{
 		$id = $this->request->input('id');
 		if(!is_numeric($id)){
-            throw new AppErrorRequestException('操作失败',Code::OPERATION_FAILED);
+            throw new AppErrorRequestException('请求错误',Code::ERROR);
 		}
 
 		$result = $role->where('id',$id)->delete();
@@ -82,7 +81,7 @@ class RoleController extends AbstractController
 			return $this->helper->success();
 		}
 
-        throw new AppErrorRequestException('操作失败',Code::OPERATION_FAILED);
+        throw new AppErrorRequestException('请求错误',Code::ERROR);
 	}
 
     /**
@@ -92,7 +91,7 @@ class RoleController extends AbstractController
 	{
 	    $id = $this->request->input('id',0);
         if(!is_numeric($id) || $id==0){
-            throw new AppErrorRequestException('操作失败',Code::OPERATION_FAILED);
+            throw new AppErrorRequestException('请求错误',Code::ERROR);
         }
         $roleHasPermission = Db::table('role_has_permissions')
             ->where('role_id',$id)
@@ -115,14 +114,14 @@ class RoleController extends AbstractController
         $id = $this->request->input('id');
         $arr = $this->request->all();
         if(!is_array($arr)){
-            throw new AppErrorRequestException('操作失败',Code::OPERATION_FAILED);
+            throw new AppErrorRequestException('请求错误',Code::ERROR);
         }
         if(!isset($arr['ids']) || !is_array($arr['ids'])){
-            throw new AppErrorRequestException('操作失败',Code::OPERATION_FAILED);
+            throw new AppErrorRequestException('请求错误',Code::ERROR);
         }
         foreach ($arr['ids'] as $v){
             if(!is_numeric($v) || $v<1){
-                throw new AppErrorRequestException('操作失败',Code::OPERATION_FAILED);
+                throw new AppErrorRequestException('请求错误',Code::ERROR);
             }
         }
 
@@ -133,6 +132,6 @@ class RoleController extends AbstractController
             return $this->helper->success();
         }
 
-        throw new AppErrorRequestException('操作失败',Code::OPERATION_FAILED);
+        throw new AppErrorRequestException('请求错误',Code::ERROR);
     }
 }

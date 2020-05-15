@@ -5,7 +5,6 @@ declare(strict_types = 1);
 namespace App\Helpers;
 
 use App\Exception\AppNotFoundException;
-use App\Helpers\Code;
 use App\Service\Redis;
 use Hyperf\Contract\SessionInterface;
 use Psr\Http\Message\ServerRequestInterface;

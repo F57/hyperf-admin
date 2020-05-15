@@ -4,11 +4,10 @@ declare(strict_types=1);
 
 namespace App\Middleware;
 
+use App\Exception\AppAuthenticationFailureException;
 use App\Exception\AppErrorRequestException;
 use App\Exception\AppNotFoundException;
-use App\Helpers\Code;
 use App\Model\Admin;
-use Donjan\Permission\Exceptions\UnauthorizedException;
 use Psr\Container\ContainerInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Server\MiddlewareInterface;
@@ -119,7 +118,7 @@ class AuthMiddleware implements MiddlewareInterface
                 }
 
                 if(!$result && $method !='GET'){
-                    throw new UnauthorizedException('没有权限',Code::VALIDATE_ERROR);
+                    throw new AppAuthenticationFailureException('api');
                 }
 
                 $menu = $user->getMenu();

@@ -26,7 +26,7 @@ class AdminController extends AbstractController
      */
     public function index(Admin $admin,Role $role)
     {
-        $list = $this->page->getHtml($admin->getListByPage()->toArray());
+        $list = $this->page->getHtml($admin->getListByPage());
         $roles = $role::all()->toArray();
         return $this->render->render('system.admin.index',$this->helper->initData(['list'=>$list,'roles'=>$roles]));
 
@@ -54,7 +54,7 @@ class AdminController extends AbstractController
             return $this->helper->success();
         } catch(\Throwable $ex){
             Db::rollBack();
-            throw new AppErrorRequestException('操作失败',Code::OPERATION_FAILED);
+            throw new AppErrorRequestException('请求错误',Code::ERROR);
         }
 
     }
@@ -88,7 +88,7 @@ class AdminController extends AbstractController
 
         } catch(\Throwable $ex){
             Db::rollBack();
-            throw new AppErrorRequestException('操作失败',Code::OPERATION_FAILED);
+            throw new AppErrorRequestException('请求错误',Code::ERROR);
         }
     }
 
@@ -99,7 +99,7 @@ class AdminController extends AbstractController
     {
         $id = $this->request->input('id');
         if(!is_numeric($id)){
-            throw new AppErrorRequestException('操作失败',Code::OPERATION_FAILED);
+            throw new AppErrorRequestException('请求错误',Code::ERROR);
         }
         $where[]=['id','=',$id];
         $result = $admin->del($where);
@@ -108,7 +108,7 @@ class AdminController extends AbstractController
             return $this->helper->success();
         }
 
-        throw new AppErrorRequestException('操作失败',Code::OPERATION_FAILED);
+        throw new AppErrorRequestException('请求错误',Code::ERROR);
     }
 
     /**
@@ -146,7 +146,7 @@ class AdminController extends AbstractController
             return $this->helper->success();
         }
 
-        throw new AppErrorRequestException('操作失败',Code::OPERATION_FAILED);
+        throw new AppErrorRequestException('请求错误',Code::ERROR);
     }
 
     /**
@@ -169,7 +169,7 @@ class AdminController extends AbstractController
 			return $this->helper->success();
 		}
 
-        throw new AppErrorRequestException('操作失败',Code::OPERATION_FAILED);
+        throw new AppErrorRequestException('请求错误',Code::ERROR);
 
 	}
 }
